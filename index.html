@@ -25,9 +25,10 @@
         }
         .countdown {
             font-size: 2em;
+            display: flex;
+            justify-content: center;
         }
         .countdown div {
-            display: inline-block;
             margin: 0 15px;
         }
     </style>
@@ -38,8 +39,6 @@
         <div class="countdown" id="timer1">
             <div><span id="days1">273</span> DAYS</div>
             <div><span id="hours1">10</span> HOURS</div>
-            <div><span id="minutes1">30</span> MINUTES</div>
-            <div><span id="seconds1">50</span> SECONDS</div>
         </div>
     </div>
     <div class="timer-container">
@@ -47,17 +46,13 @@
         <div class="countdown" id="timer2">
             <div><span id="days2">273</span> DAYS</div>
             <div><span id="hours2">10</span> HOURS</div>
-            <div><span id="minutes2">30</span> MINUTES</div>
-            <div><span id="seconds2">50</span> SECONDS</div>
         </div>
     </div>
     <div class="timer-container">
-        <h2>Infomanagment and Digital Businessmodels</h2>
+        <h2>Infomanagement and Digital Businessmodels</h2>
         <div class="countdown" id="timer3">
             <div><span id="days3">273</span> DAYS</div>
             <div><span id="hours3">10</span> HOURS</div>
-            <div><span id="minutes3">30</span> MINUTES</div>
-            <div><span id="seconds3">50</span> SECONDS</div>
         </div>
     </div>
     <div class="timer-container">
@@ -65,8 +60,6 @@
         <div class="countdown" id="timer4">
             <div><span id="days4">273</span> DAYS</div>
             <div><span id="hours4">10</span> HOURS</div>
-            <div><span id="minutes4">30</span> MINUTES</div>
-            <div><span id="seconds4">50</span> SECONDS</div>
         </div>
     </div>
     <div class="timer-container">
@@ -74,8 +67,6 @@
         <div class="countdown" id="timer5">
             <div><span id="days5">273</span> DAYS</div>
             <div><span id="hours5">10</span> HOURS</div>
-            <div><span id="minutes5">30</span> MINUTES</div>
-            <div><span id="seconds5">50</span> SECONDS</div>
         </div>
     </div>
     <script>
@@ -88,13 +79,9 @@
 
                 const days = Math.floor(distance / (1000 * 60 * 60 * 24));
                 const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
                 element.querySelector(`#days${elementId.slice(-1)}`).innerHTML = days;
                 element.querySelector(`#hours${elementId.slice(-1)}`).innerHTML = hours;
-                element.querySelector(`#minutes${elementId.slice(-1)}`).innerHTML = minutes;
-                element.querySelector(`#seconds${elementId.slice(-1)}`).innerHTML = seconds;
 
                 if (distance < 0) {
                     clearInterval(interval);
@@ -107,8 +94,8 @@
         countdown('timer1', 'August 2, 2024 16:30:00');
         countdown('timer2', 'August 5, 2024 11:00:00');
         countdown('timer3', 'July 30, 2024 16:30:00');
-        countdown('timer4', 'July 26, 2024 08:30:00');
-        countdown('timer5', 'July 23, 2024 08:30:00');
+        countdown('timer4', 'July 23, 2024 08:30:00');
+        countdown('timer5', 'July 26, 2024 08:30:00');
     </script>
 </body>
 </html>
