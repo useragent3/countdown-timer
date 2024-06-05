@@ -3,19 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Countdown Timer</title>
+    <title>Countdown Timers</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
+            justify-content: center;
             height: 100vh;
             margin: 0;
             background-color: #f4f4f4;
         }
-        .countdown {
+        .timer-container {
             text-align: center;
+            margin: 20px;
+        }
+        .countdown {
             font-size: 2em;
         }
         .countdown div {
@@ -25,35 +29,83 @@
     </style>
 </head>
 <body>
-    <div class="countdown">
-        <div><span id="days">273</span> DAYS</div>
-        <div><span id="hours">10</span> HOURS</div>
-        <div><span id="minutes">30</span> MINUTES</div>
-        <div><span id="seconds">50</span> SECONDS</div>
+    <div class="timer-container">
+        <h2>Cost Accounting</h2>
+        <div class="countdown" id="timer1">
+            <div><span id="days1">273</span> DAYS</div>
+            <div><span id="hours1">10</span> HOURS</div>
+            <div><span id="minutes1">30</span> MINUTES</div>
+            <div><span id="seconds1">50</span> SECONDS</div>
+        </div>
+    </div>
+    <div class="timer-container">
+        <h2>Production and Logistics</h2>
+        <div class="countdown" id="timer2">
+            <div><span id="days2">273</span> DAYS</div>
+            <div><span id="hours2">10</span> HOURS</div>
+            <div><span id="minutes2">30</span> MINUTES</div>
+            <div><span id="seconds2">50</span> SECONDS</div>
+        </div>
+    </div>
+    <div class="timer-container">
+        <h2>Digitale Geschäftsmodelle</h2>
+        <div class="countdown" id="timer3">
+            <div><span id="days3">273</span> DAYS</div>
+            <div><span id="hours3">10</span> HOURS</div>
+            <div><span id="minutes3">30</span> MINUTES</div>
+            <div><span id="seconds3">50</span> SECONDS</div>
+        </div>
+    </div>
+    <div class="timer-container">
+        <h2>Economics II - Macroeconomics</h2>
+        <div class="countdown" id="timer4">
+            <div><span id="days4">273</span> DAYS</div>
+            <div><span id="hours4">10</span> HOURS</div>
+            <div><span id="minutes4">30</span> MINUTES</div>
+            <div><span id="seconds4">50</span> SECONDS</div>
+        </div>
+    </div>
+    <div class="timer-container">
+        <h2>Data Science and Statistical Thinking</h2>
+        <div class="countdown" id="timer5">
+            <div><span id="days5">273</span> DAYS</div>
+            <div><span id="hours5">10</span> HOURS</div>
+            <div><span id="minutes5">30</span> MINUTES</div>
+            <div><span id="seconds5">50</span> SECONDS</div>
+        </div>
     </div>
     <script>
-        function countdown() {
-            const countDownDate = new Date("December 31, 2024 23:59:59").getTime();
-            const now = new Date().getTime();
-            const distance = countDownDate - now;
+        const countdown = (elementId, targetDate) => {
+            const element = document.getElementById(elementId);
+            const countDownDate = new Date(targetDate).getTime();
+            const interval = setInterval(() => {
+                const now = new Date().getTime();
+                const distance = countDownDate - now;
 
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-            document.getElementById("days").innerHTML = days;
-            document.getElementById("hours").innerHTML = hours;
-            document.getElementById("minutes").innerHTML = minutes;
-            document.getElementById("seconds").innerHTML = seconds;
-            
-            if (distance < 0) {
-                clearInterval(interval);
-                document.querySelector(".countdown").innerHTML = "EXPIRED";
-            }
-        }
+                element.querySelector(`#days${elementId.slice(-1)}`).innerHTML = days;
+                element.querySelector(`#hours${elementId.slice(-1)}`).innerHTML = hours;
+                element.querySelector(`#minutes${elementId.slice(-1)}`).innerHTML = minutes;
+                element.querySelector(`#seconds${elementId.slice(-1)}`).innerHTML = seconds;
 
-        const interval = setInterval(countdown, 1000);
+                if (distance < 0) {
+                    clearInterval(interval);
+                    element.innerHTML = "EXPIRED";
+                }
+            }, 1000);
+        };
+
+        // Initialize all countdowns with their target dates
+        countdown('timer1', 'August 2, 2024 16:30:00');
+        countdown('timer2', 'July 30, 2024 16:30:00');
+        countdown('timer3', 'July 26, 2024 11:00:00');
+        countdown('timer4', 'July 23, 2024 08:30:00');
+        countdown('timer5', 'July 23, 2024 08:30:00');
     </script>
 </body>
 </html>
+
