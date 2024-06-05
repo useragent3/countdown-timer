@@ -8,13 +8,19 @@
         body {
             font-family: Arial, sans-serif;
             display: flex;
-            flex-direction: column;
-            align-items: center;
             justify-content: center;
+            align-items: center;
             height: 100vh;
             margin: 0;
             background-color: #000;
             color: #fff;
+        }
+        .timers-wrapper {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
         }
         .timer-container {
             text-align: center;
@@ -34,39 +40,41 @@
     </style>
 </head>
 <body>
-    <div class="timer-container">
-        <h2>Cost Accounting</h2>
-        <div class="countdown" id="timer1">
-            <div><span id="days1">273</span> DAYS</div>
-            <div><span id="hours1">10</span> HOURS</div>
+    <div class="timers-wrapper">
+        <div class="timer-container">
+            <h2>Cost Accounting</h2>
+            <div class="countdown" id="timer1">
+                <div><span id="days1">273</span> DAYS</div>
+                <div><span id="hours1">10</span> HOURS</div>
+            </div>
         </div>
-    </div>
-    <div class="timer-container">
-        <h2>Production and Logistics</h2>
-        <div class="countdown" id="timer2">
-            <div><span id="days2">273</span> DAYS</div>
-            <div><span id="hours2">10</span> HOURS</div>
+        <div class="timer-container">
+            <h2>Production and Logistics</h2>
+            <div class="countdown" id="timer2">
+                <div><span id="days2">273</span> DAYS</div>
+                <div><span id="hours2">10</span> HOURS</div>
+            </div>
         </div>
-    </div>
-    <div class="timer-container">
-        <h2>Infomanagement and Digital Businessmodels</h2>
-        <div class="countdown" id="timer3">
-            <div><span id="days3">273</span> DAYS</div>
-            <div><span id="hours3">10</span> HOURS</div>
+        <div class="timer-container">
+            <h2>Infomanagement and Digital Businessmodels</h2>
+            <div class="countdown" id="timer3">
+                <div><span id="days3">273</span> DAYS</div>
+                <div><span id="hours3">10</span> HOURS</div>
+            </div>
         </div>
-    </div>
-    <div class="timer-container">
-        <h2>Economics II - Macroeconomics</h2>
-        <div class="countdown" id="timer4">
-            <div><span id="days4">273</span> DAYS</div>
-            <div><span id="hours4">10</span> HOURS</div>
+        <div class="timer-container">
+            <h2>Economics II - Macroeconomics</h2>
+            <div class="countdown" id="timer4">
+                <div><span id="days4">273</span> DAYS</div>
+                <div><span id="hours4">10</span> HOURS</div>
+            </div>
         </div>
-    </div>
-    <div class="timer-container">
-        <h2>Data Science and Statistical Thinking</h2>
-        <div class="countdown" id="timer5">
-            <div><span id="days5">273</span> DAYS</div>
-            <div><span id="hours5">10</span> HOURS</div>
+        <div class="timer-container">
+            <h2>Data Science and Statistical Thinking</h2>
+            <div class="countdown" id="timer5">
+                <div><span id="days5">273</span> DAYS</div>
+                <div><span id="hours5">10</span> HOURS</div>
+            </div>
         </div>
     </div>
     <script>
@@ -94,8 +102,8 @@
         countdown('timer1', 'August 2, 2024 16:30:00');
         countdown('timer2', 'August 5, 2024 11:00:00');
         countdown('timer3', 'July 30, 2024 16:30:00');
-        countdown('timer4', 'July 23, 2024 08:30:00');
-        countdown('timer5', 'July 26, 2024 08:30:00');
+        countdown('timer4', 'July 26, 2024 08:30:00');
+        countdown('timer5', 'July 23, 2024 08:30:00');
     </script>
 </body>
 </html>
